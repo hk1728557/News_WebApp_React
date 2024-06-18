@@ -39,7 +39,7 @@ export default class App extends Component {
               element={
                 <News
                   setProgress={this.setProgress}
-                  apiKey={this.apiKey}
+                  apiKey={this.apiKey} /*read the api key */
                   key="general"
                   pageSize={this.pageSize}
                   country="in"
