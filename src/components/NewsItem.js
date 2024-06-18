@@ -7,13 +7,19 @@ export class NewsItem extends Component {
     return (
       <div className="my-3">
         <div className="card center">
-          {/* <span class="badge text-bg-primary">{sourceName}</span> */}
-          <span
-            class="position-absolute top-0  translate-middle badge rounded-pill bg-success"
-            style={{ zIndex: 1, left: "88%" }}
+          {/* news source badge  */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+              position: "absolute",
+              right: "0",
+            }}
           >
-            {sourceName}
-          </span>
+            {/* <span class="badge text-bg-primary">{sourceName}</span> */}
+            <span className="badge rounded-pill bg-danger">{sourceName}</span>
+          </div> 
+
           <img
             src={
               !imageUrl
@@ -27,7 +33,12 @@ export class NewsItem extends Component {
 
           <div className="card-body">
             <h5 className="card-title">{title}...</h5>
-            <p className="card-text">{description}... </p>
+            <p className="card-text">
+              {!description
+                ? "wait for some time new are read on the process and fetch news Headlines and wait for some time"
+                : description}
+              ...{" "}
+            </p>
 
             <p className="card-text" style={{ fontSize: ".875rem" }}>
               <small>
